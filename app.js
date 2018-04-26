@@ -46,7 +46,7 @@ bot.dialog('/', [
     },
     function (session, results) {
         session.userData.coding = results.response;
-        builder.Prompts.choice(session, "What language do you code Node using?", ["JavaScript", "CoffeeScript", "TypeScript"]);
+        builder.Prompts.choice(session, "What language do you code Node using?", ["JavaScript", "CoffeeScript"]);
     },
     function (session) {
         builder.Prompts.text(session, "Who is your mentor for Node?");
@@ -56,7 +56,7 @@ bot.dialog('/', [
         //session.userData.language = results.response.entity;
         session.send("Got it... " + session.userData.name + 
                     " you've been programming for " + session.userData.coding + 
-                    " years and use " + session.userData.coding.entity + 
+                    " years and use " +  + 
                     "Your mentor is " + results.response + ".");
     }
 ]);
